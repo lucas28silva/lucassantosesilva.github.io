@@ -1,0 +1,329 @@
+/* ===================================================================
+   Lucas Santos e Silva — personal research site
+   Design tokens
+   =================================================================== */
+
+:root {
+  --paper: #FAFAF7;
+  --paper-dim: #F3F2ED;
+  --ink: #1B1D1F;
+  --ink-soft: #4B4E51;
+  --ink-mute: #7A7D80;
+  --line: #DEDCD4;
+  --line-strong: #C9C7BD;
+  --accent: #1F4B43;      /* muted transmission-line teal */
+  --accent-soft: #E6EDEA;
+
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --measure: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+a:hover { text-decoration-color: var(--accent); color: var(--accent); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / nav ---------- */
+
+header.site {
+  padding: 40px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+header.site .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+.brand {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav.primary {
+  display: flex;
+  gap: 24px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+nav.primary a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+}
+nav.primary a:hover,
+nav.primary a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Single-line-diagram divider (signature element) ---------- */
+
+.sld {
+  display: block;
+  width: 100%;
+  height: 14px;
+  margin: 0 auto;
+}
+.sld svg { display: block; width: 100%; height: 100%; }
+.sld line { stroke: var(--line-strong); stroke-width: 1; }
+.sld circle { fill: var(--paper); stroke: var(--accent); stroke-width: 1.4; }
+
+section + section.divided { margin-top: 8px; }
+
+/* ---------- Hero ---------- */
+
+main { padding: 56px 0 96px; }
+
+.hero { padding: 8px 0 36px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px;
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 0 8px;
+}
+
+.bio p { margin: 0 0 18px; max-width: 66ch; }
+.bio { margin-top: 28px; }
+
+/* ---------- Link rows (identity / scholarly IDs) ---------- */
+
+.idlinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+}
+.idlinks a { text-decoration: none; color: var(--ink-soft); }
+.idlinks a:hover { color: var(--accent); }
+.idlinks span.sep { color: var(--line-strong); }
+
+/* ---------- Section headings ---------- */
+
+h2.section-title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.section-note {
+  color: var(--ink-mute);
+  font-size: 0.95rem;
+  margin: 0 0 28px;
+}
+
+.section-block { margin-top: 64px; }
+.section-block:first-of-type { margin-top: 0; }
+
+/* ---------- Publication / working-paper cards ---------- */
+
+.pub {
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.pub:last-child { padding-bottom: 4px; }
+
+.pub-meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.pub-title {
+  font-family: var(--display);
+  font-size: 1.22rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  letter-spacing: -0.005em;
+}
+
+.pub-authors {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0 0 12px;
+}
+.pub-authors .you { color: var(--ink); font-weight: 600; }
+
+.pub-note {
+  color: var(--ink-mute);
+  font-size: 0.92rem;
+  margin: 0 0 12px;
+}
+
+.pub-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+.pub-links a { text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line-strong); }
+.pub-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.status-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* ---------- CV page ---------- */
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 4px 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.cv-entry:last-child { padding-bottom: 4px; }
+
+.cv-date {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+  padding-top: 2px;
+}
+
+.cv-role {
+  font-family: var(--display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0 0 3px;
+}
+
+.cv-org { color: var(--ink-soft); font-size: 0.96rem; margin: 0 0 8px; }
+
+.cv-detail { color: var(--ink-mute); font-size: 0.92rem; margin: 0; }
+.cv-detail + .cv-detail { margin-top: 6px; }
+
+@media (max-width: 560px) {
+  .cv-entry { grid-template-columns: 1fr; gap: 4px; }
+  .cv-date { padding-top: 0; }
+}
+
+/* ---------- Contact page ---------- */
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+}
+.contact-list li {
+  display: flex;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+.contact-list li:last-child { border-bottom: 1px solid var(--line); }
+
+.contact-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+  width: 108px;
+  flex: none;
+}
+
+.contact-value a { font-size: 1.02rem; }
+
+/* ---------- Footer ---------- */
+
+footer.site {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 50px;
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+/* ---------- Utility ---------- */
+
+.placeholder-note {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin: 24px 0;
+}
