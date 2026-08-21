@@ -18,7 +18,7 @@
   --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --measure: 960px;
+  --measure: clamp(600px, 85vw, 1100px);
 }
 
 * { box-sizing: border-box; }
@@ -140,11 +140,10 @@ h1 {
 .lede {
   font-size: 1.12rem;
   color: var(--ink-soft);
-  max-width: 75ch;
   margin: 0 0 8px;
 }
 
-.bio p { margin: 0 0 18px; max-width: 66ch; }
+.bio p { margin: 0 0 18px;}
 .bio { margin-top: 28px; }
 
 /* ---------- Link rows (identity / scholarly IDs) ---------- */
