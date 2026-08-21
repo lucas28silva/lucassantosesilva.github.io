@@ -18,7 +18,7 @@
   --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --measure: clamp(600px, 85vw, 1100px);
+  --measure: clamp(600px, 85vw, 1600px);
 }
 
 * { box-sizing: border-box; }
