@@ -140,7 +140,7 @@ h1 {
 .lede {
   font-size: 1.12rem;
   color: var(--ink-soft);
-  max-width: 60ch;
+  max-width: 75ch;
   margin: 0 0 8px;
 }
 
